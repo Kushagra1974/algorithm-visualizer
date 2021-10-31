@@ -45,7 +45,7 @@ function makesorted(brr, start, mid, last, fun, speed) {
         setTimeout(() => {
             let abcd = arr.slice();
             fun(abcd, i, start)
-        }, count * 100);
+        }, count * 300);
     }
 
     while (lftpointer < left.length) {
@@ -56,7 +56,7 @@ function makesorted(brr, start, mid, last, fun, speed) {
         setTimeout(() => {
             let abcd = arr.slice();
             fun(abcd, i, start)
-        }, count * 100);
+        }, count * 300);
 
     }
 
@@ -68,7 +68,7 @@ function makesorted(brr, start, mid, last, fun, speed) {
         setTimeout(() => {
             let abcd = arr.slice();
             fun(abcd, i, start)
-        }, count * 100);
+        }, count * 300);
 
     }
     for (let i = 0; i < arr.length; i++) {
