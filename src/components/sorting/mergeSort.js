@@ -1,23 +1,23 @@
-export function mergeSort(array, speed, fun) {
-    let arr = array.slice();
-    Sort(arr, 0, arr.length - 1, fun);
-    console.log(arr)
-    count = -1;
+export async function mergeSort(array, speed, fun) {
+    await Sort(array, 0, array.length - 1, fun, speed);
 }
 
-function Sort(arr, start, last, fun, speed) {
+function sleep(t) {
+    return new Promise(res => setTimeout(() => res(), t))
+}
+
+
+async function Sort(arr, start, last, fun, speed) {
     if (start < last) {
         let mid = Math.floor((start + last) / 2);
-        Sort(arr, start, mid, fun, speed);
-        Sort(arr, mid + 1, last, fun, speed);
+        await Sort(arr, start, mid, fun, speed);
+        await Sort(arr, mid + 1, last, fun, speed);
 
-        makesorted(arr, start, mid, last, fun, speed);
+        await makesorted(arr, start, mid, last, fun, speed);
     }
 }
 
-let count = -1;
-function makesorted(brr, start, mid, last, fun, speed) {
-    let arr = brr.slice()
+async function makesorted(arr, start, mid, last, fun, speed) {
     let left = [].slice();
     let right = [].slice();
     for (let i = start; i <= mid; i++) {
@@ -33,45 +33,36 @@ function makesorted(brr, start, mid, last, fun, speed) {
     let i = start;
 
     for (i; i < last && lftpointer < left.length && rightpointer < right.length; i++) {
-        count++;
+        await sleep((10 - speed) * 100);
+
         if (left[lftpointer] < right[rightpointer]) {
             arr[i] = left[lftpointer];
+            fun(arr, i, start + lftpointer, "merge")
             lftpointer++;
         }
         else {
             arr[i] = right[rightpointer];
+            fun(arr, i, mid + 1 + rightpointer)
             rightpointer++;
         }
-        setTimeout(() => {
-            let abcd = arr.slice();
-            fun(abcd, i, start)
-        }, count * 300);
     }
 
     while (lftpointer < left.length) {
-        count++;
+        await sleep((10 - speed) * 100);
         arr[i] = left[lftpointer];
+        fun(arr, i, start + lftpointer, "merge")
         lftpointer++;
         i++;
-        setTimeout(() => {
-            let abcd = arr.slice();
-            fun(abcd, i, start)
-        }, count * 300);
 
     }
 
-    while (rightpointer[right.length]) {
-        count++;
+    while (rightpointer < right.length) {
+        await sleep((10 - speed) * 100);
         arr[i] = right[rightpointer]
+        fun(arr, i, mid + 1 + rightpointer, "merge")
         rightpointer++;
         i++;
-        setTimeout(() => {
-            let abcd = arr.slice();
-            fun(abcd, i, start)
-        }, count * 300);
-
-    }
-    for (let i = 0; i < arr.length; i++) {
-        brr[i] = arr[i];
     }
 }
+
+
