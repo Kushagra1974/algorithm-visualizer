@@ -10,7 +10,7 @@ function Home() {
                 <Card heading="Sorting" path="/sorting" img="/sorting.jfif" desc="This shows the visualization of the process of arranging elements of an array in asending order" />
             </div>
             <div className={classes.footer}>
-                <h1>github link</h1>
+                <h1><a className={classes.a} href="https://github.com/Kushagra1974/algorithm-visualizer">GitHub link</a></h1>
             </div>
         </div>
     )
