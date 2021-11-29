@@ -15,4 +15,4 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 ### Link to the app
-#### Go to [https://algorithm-visualizer121.herokuapp.com](https://algorithm-visualizer121.herokuapp.com)
+#### Go to [https://elegant-roentgen-87eeb8.netlify.app/](https://elegant-roentgen-87eeb8.netlify.app/)
