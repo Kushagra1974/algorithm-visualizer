@@ -1,6 +1,9 @@
-# Getting Started with Create React App
+# Algorithm-Visualizer.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+1) Visualises the sorting algorithms.
+2) Can slow the speed of each iteration for better visualition.
+3) Cange the number of element present in the array
 
 ## Available Scripts
 
